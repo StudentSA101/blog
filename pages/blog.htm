@@ -1,0 +1,31 @@
+title = "Blog"
+url = "/blog/:page?"
+layout = "default"
+description = "The main blog page, with all posts."
+hidden = "0"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = "20"
+categoryPage = "blog/category"
+==
+<main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8 blog-main">
+        {% partial 'blog/posts' %}
+      </div>
+      <aside class="col-md-4 blog-sidebar">
+          <label class="ml-4">Categories #</label>
+        {% partial 'blog/categories' %}
+      </aside><!-- /.blog-sidebar -->
+
+    </div><!-- /.row -->
+
+  </main><!-- /.container -->

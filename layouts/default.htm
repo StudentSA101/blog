@@ -1,0 +1,58 @@
+description = "custom layout"
+
+[session]
+security = "all"
+==
+<?php
+function onStart()
+    {
+        $this->addCss('assets/dist/app.css');
+        $this->addJs('assets/dist/app.js');
+    }
+?>
+==
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Page meta -->
+    <title>October CMS - {{ this.page.title }}</title>
+	<meta charset="utf-8">
+   	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ this.page.meta_description }}">
+    <meta name="title" content="{{ this.page.meta_title }}">
+    <meta name="author" content="October CMS">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="">
+    {% styles %}
+    <!-- CSFR Script -->
+    <script>
+        //  space for the csrf token 
+    </script>
+    <style>
+        .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        }
+
+        @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+        }
+    </style>
+</head>
+<body>
+	<div id="app">
+	    {% partial "navbar" %}
+        {% page %}
+        {% partial "footer" %}
+    </div>
+    {% scripts %}
+</body>
+</html>

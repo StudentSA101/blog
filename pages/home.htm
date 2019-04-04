@@ -1,0 +1,15 @@
+title = "Home"
+url = "/"
+layout = "default"
+description = "The landing page"
+hidden = "0"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = "4"
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+postPage = "blog/post"
+==
+<landing data="{{ blogPosts.post }}"></landing>
+{% partial 'blog/front-page-posts' %}
